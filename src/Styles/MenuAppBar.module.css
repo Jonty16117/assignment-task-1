@@ -1,0 +1,21 @@
+.root {
+  top: 0;
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  position: relative;
+  z-index: 100;
+}
+
+.appbar {
+  background-color: white;
+}
+
+.menuButton {
+  margin-right: 2;
+  /* color: green; */
+}
+
+.rightIcons {
+  flex-grow: 1;
+}

@@ -1,0 +1,12 @@
+// $primary: #2b155bff;
+// $body-bg: #f3ebfdff;
+// $secondary: rgb(228, 212, 248);
+
+body {
+  font-family: "Roboto", sans-serif;
+  // background-color: white;
+}
+
+
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
