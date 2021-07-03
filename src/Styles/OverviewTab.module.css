@@ -1,0 +1,54 @@
+.root {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  background-color: transparent;
+  border-radius: 20px;
+}
+
+.bannerContainer {
+  padding: 0;
+}
+
+.root2 {
+  display: flex;
+}
+
+.refText {
+  margin-top: 30px;
+}
+
+.trophy {
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.showInAnalytics {
+  background-color: #aeb0e9;
+  height: 30px;
+  width: 150px;
+  margin-top: 30px;
+  border-radius: 50px;
+  font-size: 13px;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.downloadDiv {
+  display: flex;
+  position: absolute;
+  right: 0;
+  margin-right: 50px;
+}
+
+.downloadImg {
+  margin-top: 30px;
+  width: 25px;
+  height: 25px;
+}
+
+.downloadText {
+  margin-top: 31px;
+  font-size: smaller;
+}
