@@ -52,3 +52,10 @@
   margin-top: 31px;
   font-size: smaller;
 }
+
+.tableContainer {
+  margin-top: 25px;
+  box-shadow: -5px 0 8px -5px grey, 5px 0 8px -5px grey;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}

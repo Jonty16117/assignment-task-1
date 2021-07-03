@@ -5,6 +5,7 @@ import download from "../Assets/download.png";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import RefRevCard from "./RefRevCard";
+import RefTable from "./RefTable";
 
 const responsive = {
   superLargeDesktop: {
@@ -52,15 +53,14 @@ function OverviewTab() {
       <div className={styles.root2}>
         <img src={trophy} className={styles.trophy} />
         <b className={styles.refText}>All Referral Programs&nbsp;&nbsp;</b>
-        <div className={styles.showInAnalytics}>
-          Show in Analytics
-        </div>
+        <div className={styles.showInAnalytics}>Show in Analytics</div>
         <div className={styles.downloadDiv}>
           <img src={download} className={styles.downloadImg} />
-          <div className={styles.downloadText}>
-          &nbsp;Download PDF/CSV
+          <div className={styles.downloadText}>&nbsp;Download PDF/CSV</div>
         </div>
-        </div>
+      </div>
+      <div className={styles.tableContainer}>
+        <RefTable />
       </div>
     </div>
   );
