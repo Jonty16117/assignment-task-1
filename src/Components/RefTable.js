@@ -8,6 +8,8 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import styles from "../Styles/RefTable.module.css";
+import EditButton from "./EditButton";
+import WeightageSelector from "./WeightageSelector";
 import { FormatBold } from "@material-ui/icons";
 
 function makeid(length) {
@@ -26,15 +28,14 @@ const StyledTableCell = withStyles((theme) => ({
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white,
     fontSize: 15,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: "bold",
+    textAlign: "center",
   },
   body: {
     fontSize: 13,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: "bold",
+    textAlign: "center",
   },
-  
 }))(TableCell);
 
 const StyledTableRow = withStyles((theme) => ({
@@ -84,11 +85,13 @@ export default function RefTable() {
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper} >
+    <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="customized table">
-        <TableHead >
-          <TableRow >
-            <StyledTableCell className={styles.tableHeadLeft}>S. No.</StyledTableCell>
+        <TableHead>
+          <TableRow>
+            <StyledTableCell className={styles.tableHeadLeft}>
+              S. No.
+            </StyledTableCell>
             <StyledTableCell align="right">
               Referral Program Name
             </StyledTableCell>
@@ -98,28 +101,28 @@ export default function RefTable() {
             </StyledTableCell>
             <StyledTableCell align="right">Total Revenue</StyledTableCell>
             <StyledTableCell align="right">Audience Weightage</StyledTableCell>
-            <StyledTableCell align="right" className={styles.tableHeadRight}>Preview/Settings</StyledTableCell>
+            <StyledTableCell align="right" className={styles.tableHeadRight}>
+              Preview/Settings
+            </StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row, index) => (
             <StyledTableRow key={row.id}>
               <StyledTableCell component="th" scope="row">
-                {index+1}.
+                {index + 1}.
               </StyledTableCell>
               <StyledTableCell align="right">{row.refProgName}</StyledTableCell>
               <StyledTableCell align="right">{row.customer}</StyledTableCell>
               <StyledTableCell align="right">
                 {row.ordersPlacedUsingCoupon}
               </StyledTableCell>
+              <StyledTableCell align="right">{row.totalRev}</StyledTableCell>
               <StyledTableCell align="right">
-                {row.totalRev}
+                <WeightageSelector />
               </StyledTableCell>
               <StyledTableCell align="right">
-                {row.AudWeightage}
-              </StyledTableCell>
-              <StyledTableCell align="right">
-                Edit
+                <EditButton />
               </StyledTableCell>
             </StyledTableRow>
           ))}

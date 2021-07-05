@@ -1,0 +1,12 @@
+.root {
+  background-color: #aeb0e9;
+  color: white;
+  height: 40px;
+  line-height: 40px;
+  width: 100px;
+  border-radius: 100px;
+  border-width: 0px;
+  padding-bottom: 0px;
+  padding-top: 2px;
+  font-weight: bold;
+}

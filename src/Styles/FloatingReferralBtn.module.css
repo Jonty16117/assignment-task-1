@@ -10,12 +10,12 @@
   border-radius: 200px;
   position: absolute;
   right: 0;
-
+  z-index: 10;
 }
 
 .root:hover {
-    background-color: #F3BB03;
-  }
+  background-color: #f3bb03;
+}
 
 .plusButton {
   margin-left: 5px;

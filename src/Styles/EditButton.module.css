@@ -1,0 +1,13 @@
+.root {
+  height: 40px;
+  line-height: 40px;
+  width: 100px;
+  border-radius: 100px;
+  background-color: #f3bb03;
+  color: white;
+  font-size: larger;
+  padding-bottom: 0px;
+  box-shadow: 5px 5px 20px 3px #888888;
+  border-width: 0px;
+  font-weight: bold;
+}

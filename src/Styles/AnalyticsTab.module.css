@@ -1,0 +1,22 @@
+.root {
+  /* width: 100%; */
+  /* height: 500px; */
+  /* background-color: blue; */
+}
+
+.imageContainerleft {
+  width: 400px;
+  height: 300px;
+  object-fit: contain;
+  /* margin-left: 35px; */
+}
+
+
+.imageContainerright {
+    width: 400px;
+    height: 300px;
+    object-fit: contain;
+    /* margin-left: -35px; */
+    /* box-shadow: 5px 5px 20px 3px #888888; */
+  }
+  

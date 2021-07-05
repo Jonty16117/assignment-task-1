@@ -6,6 +6,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import RefRevCard from "./RefRevCard";
 import RefTable from "./RefTable";
+import sliderImage1 from "../Assets/sliderImage1.png";
 
 const responsive = {
   superLargeDesktop: {
@@ -37,8 +38,14 @@ function OverviewTab() {
         swipeable={true}
         removeArrowOnDeviceType={["mobile"]}
       >
-        <div className={styles.bannerContainer}>
-          <RefRevCard />
+        <div className={styles.bannerContainer1}>
+          <div className={styles.text}>
+            <b>Referral Revenue</b>
+            <br />
+            <p>in Last 7 Days</p>
+            <img src={sliderImage1} className={styles.imageContainer1} />
+          </div>
+          <button className={styles.viewBtn}>View  ></button>
         </div>
         <div className={styles.bannerContainer}>
           <RefRevCard />

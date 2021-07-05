@@ -16,7 +16,9 @@ function DisplayTabs() {
         <TabPanel>
           <OverviewTab />
         </TabPanel>
-        <TabPanel></TabPanel>
+        <TabPanel>
+          <AnalyticsTab />
+        </TabPanel>
       </Tabs>
     </div>
   );
