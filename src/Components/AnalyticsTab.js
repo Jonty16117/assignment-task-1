@@ -5,29 +5,40 @@ import analytics2 from "../Assets/analytics2.png";
 import analytics3 from "../Assets/analytics3.png";
 import analytics4 from "../Assets/analytics4.png";
 import AnalyticsGraph from "./AnalyticsGraph";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function AnalyticsTab() {
   return (
     // <div className="container" className={styles.root}>
-    <div className="container" className={styles.root}>
-      <div className="row justify-content-center">
-        <div className="col-4">
-          <img src={analytics1} className={styles.imageContainerleft} />
-        </div>
-        <div className="col-4">
-          <img src={analytics2} className={styles.imageContainerright} />
-        </div>
-      </div>
-
-      <div className="row justify-content-center">
-        <div className="col-4">
-          <img src={analytics3} className={styles.imageContainerleft} />
-        </div>
-        <div className="col-4">
-          <img src={analytics4} className={styles.imageContainerright} />
-        </div>
-      </div>
-    </div>
+    <Container>
+      <Row>
+        <Col sm={6}>
+          <div className="d-flex justify-content-center">
+            <img src={analytics1} className={styles.imageContainerleft} />
+          </div>
+        </Col>
+        <Col sm={6}>
+          <div className="d-flex justify-content-center">
+            <img src={analytics2} className={styles.imageContainerleft} />
+          </div>
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={6}>
+          <div className="d-flex justify-content-center">
+            <img src={analytics3} className={styles.imageContainerleft} />
+          </div>
+        </Col>
+        <Col sm={6}>
+          <div className="d-flex justify-content-center">
+            <img src={analytics4} className={styles.imageContainerleft} />
+          </div>
+        </Col>
+        {/* <Col sm={6} className={styles.col1}></Col> */}
+      </Row>
+    </Container>
   );
 }
 

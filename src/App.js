@@ -3,15 +3,18 @@ import MenuAppBar from "./Components/MenuAppBar";
 import Banners from "./Components/Banners";
 import FloatingReferralBtn from "./Components/FloatingReferralBtn";
 import DisplayTabs from "./Components/DisplayTabs";
+import React from "react";
 
-function App() {  
+function App() {
   return (
-    <div>
+    <React.Fragment>
       <MenuAppBar />
-      <FloatingReferralBtn />
-      <Banners />
-      <DisplayTabs />
-    </div>
+      <div className="container">
+        <FloatingReferralBtn />
+        <Banners />
+        <DisplayTabs />
+      </div>
+    </React.Fragment>
   );
 }
 
