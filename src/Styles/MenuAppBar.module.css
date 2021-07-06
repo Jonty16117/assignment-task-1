@@ -13,9 +13,29 @@
 
 .menuButton {
   margin-right: 2;
-  /* color: green; */
 }
 
 .rightIcons {
   flex-grow: 1;
+}
+
+.navbarLogo {
+  display: flex;
+  margin-left: auto;
+}
+
+.title {
+  flex-grow: 1;
+  text-align: "center";
+}
+
+.profilePic {
+  width: 30px;
+  height: 30px;
+}
+
+.dropdownBtn {
+  background-color: transparent;
+  color: black;
+  border-width: 0px;
 }

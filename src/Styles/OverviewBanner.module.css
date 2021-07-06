@@ -1,0 +1,44 @@
+.bannerContainer1 {
+  padding: 0;
+  height: 180px;
+  width: 350px;
+  border-radius: 15px;
+}
+
+.text {
+  color: white;
+  margin-left: 20px;
+  padding-top: 20px;
+  font-size: 20px;
+}
+.text p {
+  font-size: 15px;
+  margin: 0;
+}
+
+.imageContainer1 {
+    height: 50px;
+    width: 250px;
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+    
+}
+
+.viewBtn {
+  float: right;
+  margin-top: 10px;
+  margin-right: 20px;
+  background-color: white;
+  border-radius: 50px;
+  border-width: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: small;
+  font-weight: bold;
+  box-shadow: 1px 1px 20px 0.5px grey;
+}

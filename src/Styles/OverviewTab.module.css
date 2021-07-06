@@ -5,46 +5,6 @@
   border-radius: 20px;
 }
 
-.bannerContainer1 {
-  padding: 0;
-  height: 180px;
-  width: 350px;
-  background-color: #8dd8a8;
-  border-radius: 15px;
-}
-
-.text {
-  color: white;
-  margin-left: 20px;
-  padding-top: 20px;
-  font-size: 20px;
-}
-.text p {
-  font-size: 15px;
-  margin: 0;
-}
-
-.viewBtn {
-  float: right;
-  margin-top: 10px;
-  margin-right: 20px;
-  background-color: white;
-  border-radius: 50px;
-  border-width: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  font-size: small;
-  font-weight: bold;
-  box-shadow: 1px 1px 20px 0.5px grey;
-
-}
-
-.bannerContainer {
-  padding: 0;
-}
-
 .root2 {
   margin-top: 30px;
 }
@@ -60,12 +20,6 @@
   margin-bottom: 10px;
 }
 
-.col2 {
-}
-
-.col3 {
-}
-
 .trophy {
   margin-top: 0px;
   width: 40px;
@@ -74,19 +28,29 @@
 
 .showInAnalytics {
   background-color: #aeb0e9;
-  height: 30px;
-  width: 150px;
+  height: 35px;
+  width: 170px;
   border-radius: 50px;
   font-size: 13px;
   color: white;
   text-align: center;
-  padding: 5px 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-width: 0px;
 }
 
-.downloadDiv {
+.analyticsBtnImg {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.downloadDivBtn {
   display: flex;
   margin-top: 0px;
   margin-bottom: -10px;
+  background-color: transparent;
+  border-width: 0px;
 }
 
 .downloadImg {

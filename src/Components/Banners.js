@@ -4,9 +4,6 @@ import banner2 from "../Assets/banner2.png";
 import banner3 from "../Assets/banner3.png";
 import styles from "../Styles/Banners.module.css";
 import Carousel from "react-multi-carousel";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import "react-multi-carousel/lib/styles.css";
 import SliderBanner from "./SliderBanner";
 
@@ -29,16 +26,19 @@ const responsive = {
   },
 };
 
+//banner 1
 let heading1 = "Pro Tip #1:";
 let text1 = "A/B Test Your Referral Program. Start Creating new Referral Program to find out which referral program strategy brings most of the revenue to your Business.";
 let bgColor1 = "#f2f2f2";
 let textColor1 = "black";
 
+//banner 2
 let heading2 = "Pro Tip #2:";
 let text2 = "Test out your Referral Program .It will give you a journey map of what your customers will see before the referral program is even live.";
 let bgColor2 = "#455a64";
 let textColor2 = "white";
 
+//banner 3
 let heading3 = "Pro Tip #3:";
 let text3 = "Customize rewards, decide what an advocate will get referring your Product and What Referred friend will get.";
 let bgColor3 = "#739af0";
