@@ -4,7 +4,11 @@ import banner2 from "../Assets/banner2.png";
 import banner3 from "../Assets/banner3.png";
 import styles from "../Styles/Banners.module.css";
 import Carousel from "react-multi-carousel";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import "react-multi-carousel/lib/styles.css";
+import SliderBanner from "./SliderBanner";
 
 const responsive = {
   superLargeDesktop: {
@@ -25,6 +29,22 @@ const responsive = {
   },
 };
 
+let heading1 = "Pro Tip #1:";
+let text1 = "A/B Test Your Referral Program. Start Creating new Referral Program to find out which referral program strategy brings most of the revenue to your Business.";
+let bgColor1 = "#f2f2f2";
+let textColor1 = "black";
+
+let heading2 = "Pro Tip #2:";
+let text2 = "Test out your Referral Program .It will give you a journey map of what your customers will see before the referral program is even live.";
+let bgColor2 = "#455a64";
+let textColor2 = "white";
+
+let heading3 = "Pro Tip #3:";
+let text3 = "Customize rewards, decide what an advocate will get referring your Product and What Referred friend will get.";
+let bgColor3 = "#739af0";
+let textColor3 = "white";
+
+
 function Banners() {
   return (
     <div className={styles.root}>
@@ -41,55 +61,9 @@ function Banners() {
           "mobile",
         ]}
       >
-        <div className={styles.bannerContainer}>
-          {" "}
-          <div className={styles.banner1}>
-            <img
-              className={styles.imageContainer1}
-              src={banner1}
-              alt="First slide"
-            />
-            <div className={styles.bannerHeading1}> Pro Tip #1:</div>
-            <div className={styles.bannerText1}>
-              A / B Test Your Referral Program.Start Creating new Referral
-              Program to find out which referral program strategy brings most of
-              the revenue to your Business.{" "}
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.bannerContainer}>
-          {" "}
-          <div className={styles.banner2}>
-            <img
-              className={styles.imageContainer2}
-              src={banner2}
-              alt="Second slide"
-            />
-            <div className={styles.bannerHeading2}> Pro Tip #2:</div>
-            <div className={styles.bannerText2}>
-              Test out your Referral Program .It will give you a journey map of
-              what your customers will see before the referral program is even
-              live.{" "}
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.bannerContainer}>
-          {" "}
-          <div className={styles.banner3}>
-            <img
-              className={styles.imageContainer3}
-              src={banner3}
-              alt="Third slide"
-            />
-            <div className={styles.bannerHeading3}> Pro Tip #3:</div>
-            <div className={styles.bannerText3}>
-              Customize rewards, decide what an advocate will get referring your
-              Product and What Referred friend will get.{" "}
-            </div>
-          </div>
-        </div>
+        <SliderBanner image={banner1} heading={heading1} text={text1} bgColor={bgColor1} textColor={textColor1}/>
+        <SliderBanner image={banner2} heading={heading2} text={text2} bgColor={bgColor2} textColor={textColor2}/>
+        <SliderBanner image={banner3} heading={heading3} text={text3} bgColor={bgColor3} textColor={textColor3}/>
       </Carousel>
     </div>
   );

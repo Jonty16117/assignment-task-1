@@ -11,7 +11,6 @@ import Col from "react-bootstrap/Col";
 
 function AnalyticsTab() {
   return (
-    // <div className="container" className={styles.root}>
     <Container>
       <Row>
         <Col sm={6}>
@@ -36,7 +35,6 @@ function AnalyticsTab() {
             <img src={analytics4} className={styles.imageContainerleft} />
           </div>
         </Col>
-        {/* <Col sm={6} className={styles.col1}></Col> */}
       </Row>
     </Container>
   );
