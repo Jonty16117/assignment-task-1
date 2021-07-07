@@ -12,25 +12,25 @@ import Col from "react-bootstrap/Col";
 function AnalyticsTab() {
   return (
     <Container>
-      <Row>
-        <Col sm={6}>
+      <Row noGutters={true}>
+        <Col lg={6}>
           <div className="d-flex justify-content-center">
             <img src={analytics1} className={styles.imageContainerleft} />
           </div>
         </Col>
-        <Col sm={6}>
+        <Col lg={6}>
           <div className="d-flex justify-content-center">
             <img src={analytics2} className={styles.imageContainerleft} />
           </div>
         </Col>
       </Row>
       <Row>
-        <Col sm={6}>
+        <Col lg={6}>
           <div className="d-flex justify-content-center">
             <img src={analytics3} className={styles.imageContainerleft} />
           </div>
         </Col>
-        <Col sm={6}>
+        <Col lg={6}>
           <div className="d-flex justify-content-center">
             <img src={analytics4} className={styles.imageContainerleft} />
           </div>

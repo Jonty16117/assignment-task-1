@@ -40,8 +40,8 @@ const StyledTableCell = withStyles((theme) => ({
 
 const StyledTableRow = withStyles((theme) => ({
   root: {
-    "&:nth-of-type(odd)": {
-      backgroundColor: theme.palette.action.hover,
+    "&:nth-of-type(even)": {
+      backgroundColor: "#E9E9E9",
     },
   },
 }))(TableRow);
@@ -85,6 +85,7 @@ export default function RefTable() {
   const classes = useStyles();
 
   return (
+    <div className={styles.tableContainer}>
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
@@ -129,5 +130,6 @@ export default function RefTable() {
         </TableBody>
       </Table>
     </TableContainer>
+    </div>
   );
 }
