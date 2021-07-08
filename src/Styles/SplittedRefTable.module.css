@@ -13,4 +13,16 @@
   overflow: hidden;
 }
 
+.underlinedHeading {
+  /* padding-bottom: 4vw; */
+  /* margin-bottom: -4vw; */
 
+  padding-bottom: 16px;
+  margin-bottom: -16px;
+  background-image: linear-gradient(to right, #f3bb03, #f3bb03);
+  background-position: bottom left;
+  /* background-position: 100% 100%; */
+border-radius: 2px;
+  background-repeat: no-repeat;
+  background-size: 150% 5px;
+}

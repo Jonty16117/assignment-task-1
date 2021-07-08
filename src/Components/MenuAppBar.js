@@ -14,6 +14,8 @@ import navbarLogo from "../Assets/navbarLogo.png";
 import profilePic from "../Assets/profilePic.png";
 import questionIcon from "../Assets/questionIcon.png";
 import Dropdown from "react-bootstrap/Dropdown";
+import useWindowDimensions from "./useWindowDimensions";
+
 
 function MenuAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -26,6 +28,9 @@ function MenuAppBar() {
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
+
+  const { height, width } = useWindowDimensions();
+
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -45,7 +50,7 @@ function MenuAppBar() {
 
   return (
     <div className={styles.root}>
-      <AppBar position="static" color="white">
+      <AppBar position="static" color="white" className={styles.appBar}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -58,30 +63,50 @@ function MenuAppBar() {
           <Typography variant="h6" className={styles.title}>
             <img src={navbarLogo} className={styles.navbarLogo} />
           </Typography>
-          <div className={styles.rightIcons} />
-          <IconButton aria-label="show 0 new notifications" color="grey">
-            <Badge badgeContent={0} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-            <img src={questionIcon} />
-          </IconButton>
-          <Dropdown 
-            style={{marginLeft: "30px"}}
-          >
-            <Dropdown.Toggle
-              variant="transparent"
-              id="dropdown-basic"
-              className={styles.dropdownBtn}
-            >
-              Lara Erickson
-            </Dropdown.Toggle>
 
-            <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Option 1</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Option 2</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Option 3</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+          <div className={styles.rightIcons} />
+
+          {width > 700 ? (
+            <>
+              <IconButton aria-label="show 0 new notifications" color="grey">
+                <Badge badgeContent={0} color="secondary">
+                  <NotificationsIcon />
+                </Badge>
+                <img src={questionIcon} />
+              </IconButton>
+              <Dropdown style={{ marginLeft: "30px" }}>
+                <Dropdown.Toggle
+                  variant="transparent"
+                  id="dropdown-basic"
+                  className={styles.dropdownBtn}
+                >
+                  Lara Erickson
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">Option 1</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Option 2</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Option 3</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </>
+          ) : (
+            <Dropdown style={{ marginLeft: "30px" }}>
+              <Dropdown.Toggle
+                variant="transparent"
+                id="dropdown-basic"
+                className={styles.dropdownBtn}
+              >
+                &nbsp;
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">Option 1</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Option 2</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Option 3</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          )}
+
           <IconButton
             edge="end"
             aria-label="account of current user"

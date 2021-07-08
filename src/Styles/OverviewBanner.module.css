@@ -13,7 +13,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  height: 27vh;
+  /* height: 27vh; */
   box-shadow: 0px 3px 6px #0000002b;
   /* background-color: red; */
 }
@@ -22,10 +22,10 @@
   color: white;
   margin-left: 20px;
   /* padding-top: 20px; */
-  font-size: 3vh;
+  font-size: 20px;
 }
 .text p {
-  font-size: 2vh;
+  font-size: 15px;
   margin: 0;
 }
 
@@ -40,7 +40,7 @@
   /* margin: 0px 50px 0px auto; */
   margin-right: 50px;
 
-  padding: 10px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+  padding: 10px;
 }
 
 .image {
@@ -79,4 +79,69 @@
 .btnContainer {
   text-align: right;
   margin: 0px auto 0px auto;
+}
+
+@media only screen and (max-width: 700px) and (min-width: 500px) {
+  .bannerContainer1 {
+    padding: 5px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .viewBtn {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-right: 4px;
+    font-size: 8px;
+    font-weight: bold;
+  }
+
+  .text {
+    margin-left: 10px;
+    font-size: 15px;
+  }
+  .text p {
+    font-size: 10px;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .bannerContainer1 {
+    padding: 5px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+
+  .viewBtn {
+    margin-top: 2px;
+    margin-bottom: 5px;
+    margin-right: 3px;
+    font-size: 5px;
+    font-weight: bold;
+
+    /* padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px; */
+  }
+
+  .text {
+    margin-left: 7px;
+    font-size: 10px;
+  }
+  .text p {
+    font-size: 7px;
+    margin: 0;
+  }
+
+  .imageContainer {
+    /* margin-right: 50px; */
+    /* background-color: red; */
+    padding: 5px;
+  }
+
+  .btnContainer {
+    margin: 0px;
+  }
 }

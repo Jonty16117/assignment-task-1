@@ -3,6 +3,7 @@ import styles from "../Styles/SliderBanner.module.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import "../Styles/SliderBanner.css";
 
 function SliderBanner(props) {
   return (
@@ -12,8 +13,8 @@ function SliderBanner(props) {
           className={styles.banner1}
           style={{ backgroundColor: props.bgColor }}
         >
-          <Row noGutters={true}>
-            <Col lg={3} className={styles.col1}>
+          <Row noGutters={true} className={styles.noPadding}>
+            <Col xs={3} lg={3} className={styles.noPadding}>
               <div className={styles.imageDiv}>
                 <img
                   // className="img-responsive"
@@ -23,7 +24,7 @@ function SliderBanner(props) {
                 />
               </div>
             </Col>
-            <Col lg={9} className={styles.col1}>
+            <Col xs={9} lg={9} className={styles.noPadding}>
               <div
                 className={styles.bannerText}
                 style={{ color: props.textColor }}

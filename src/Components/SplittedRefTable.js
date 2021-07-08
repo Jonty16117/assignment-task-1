@@ -27,12 +27,32 @@ const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white,
-    fontSize: 15,
+    fontSize: 10,
     fontWeight: "bold",
     textAlign: "center",
   },
   body: {
-    fontSize: 13,
+    fontSize: 9,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+
+  tableLayout: "fixed",
+  width: "100%",
+
+  // table: { tableLayout: "fixed", width: "100%" },
+}))(TableCell);
+
+const UnderlinedTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+    fontSize: 10,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  body: {
+    fontSize: 9,
     fontWeight: "bold",
     textAlign: "center",
   },
@@ -113,7 +133,12 @@ export default function SplittedRefTable() {
                 <StyledTableCell align="right">
                   Referral Program Name
                 </StyledTableCell>
-                <StyledTableCell align="right">Customers</StyledTableCell>
+                <StyledTableCell
+                  align="right"
+                  inkBarStyle={{ backgroundColor: "#e77600" }}
+                >
+                  <div className={styles.underlinedHeading}>Customers</div>
+                </StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -147,7 +172,9 @@ export default function SplittedRefTable() {
                   Referral Program Name
                 </StyledTableCell>
                 <StyledTableCell align="right">
-                  Orders Placed using Coupon
+                  <div className={styles.underlinedHeading}>
+                    Orders Placed using Coupon
+                  </div>
                 </StyledTableCell>
               </TableRow>
             </TableHead>
@@ -181,7 +208,9 @@ export default function SplittedRefTable() {
                 <StyledTableCell align="right">
                   Referral Program Name
                 </StyledTableCell>
-                <StyledTableCell align="right">Total Revenue</StyledTableCell>
+                <StyledTableCell align="right">
+                  <div className={styles.underlinedHeading}>Total Revenue</div>
+                </StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -215,7 +244,9 @@ export default function SplittedRefTable() {
                   Referral Program Name
                 </StyledTableCell>
                 <StyledTableCell align="right">
-                  Audience Weightage
+                  <div className={styles.underlinedHeading}>
+                    Audience Weightage
+                  </div>
                 </StyledTableCell>
               </TableRow>
             </TableHead>
@@ -250,7 +281,9 @@ export default function SplittedRefTable() {
                   Referral Program Name
                 </StyledTableCell>
                 <StyledTableCell align="right">
-                  Preview/Settings
+                  <div className={styles.underlinedHeading}>
+                    Preview/Settings
+                  </div>
                 </StyledTableCell>
               </TableRow>
             </TableHead>

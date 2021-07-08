@@ -3,11 +3,19 @@ import styles from "../Styles/FloatingReferralBtn.module.css";
 
 function FloatingReferralBtn() {
   return (
+    // <div style={{
+    //   float: "right"
+    // }}>
     <div className={styles.root}>
-      <a href="#">
+      {/* Create New Referral Program */}
+      {/* <div className={styles.circle} /> */}
+      <div className={styles.container}>
         <div className={styles.plusButton} />
         <div className={styles.text}>Create New Referral Program</div>
-      </a>
+        {/* <div className={styles.text}></div> */}
+        {/* <a href="#"> */}
+        {/* </a> */}
+      </div>
     </div>
   );
 }

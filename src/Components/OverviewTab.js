@@ -87,17 +87,9 @@ function OverviewTab() {
             <div className={styles.viewAnalyticsDiv2}>
               <a
                 href="#"
-                style={{
-                  textDecoration: "none",
-                  fontSize: "15px",
-                  fontWeight: "bold",
-                  color: "#3181F8",
-                  textAlign: "center",
 
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
+                className={styles.viewAnalytics}
+                
               >
                 View Analytics
               </a>
@@ -108,17 +100,17 @@ function OverviewTab() {
 
       <Container>
         <Row className={styles.root2}>
-          <Col xs={7} className={styles.col1}>
+          <Col xs={5} lg={5} className={styles.col1}>
             <img src={trophy} className={styles.trophy} />
             <p className={styles.refText}>All Referral Programs&nbsp;&nbsp;</p>
           </Col>
-          <Col xs={3} className={styles.col2}>
+          <Col xs={5} lg={5} className={styles.col2}>
             <button className={styles.showInAnalytics}>
               <img src={analyticsBtn} className={styles.analyticsBtnImg} />
               Show in Analytics
             </button>
           </Col>
-          <Col xs={2} className={styles.col3}>
+          <Col xs={2} lg={2} className={styles.col3}>
             <div className="d-flex justify-content-end">
               <button className={styles.downloadDivBtn}>
                 <img src={download} className={styles.downloadImg} />
