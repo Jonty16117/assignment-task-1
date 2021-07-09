@@ -56,7 +56,6 @@
 .downloadDivBtn {
   display: flex;
   margin-top: 0px;
-  /* margin-bottom: -10px; */
   background-color: transparent;
   border-width: 0px;
 }
@@ -78,47 +77,34 @@
 }
 
 .viewAnalyticsDiv {
-  /* width: 100px; */
-  /* height: 100px; */
   text-decoration: none;
   position: relative;
   top: 30%;
   display: flex;
   justify-content: center;
-  /* background-color: blueviolet; */
-  /* transform: translateY(-50%); */
 }
 
 .viewAnalyticsDiv2 {
-  /* background-color: red; */
-  /* width: 100px; */
-  /* height: 100px; */
   margin-top: 1vw;
   text-decoration: none;
   position: relative;
   top: 30%;
-  /* transform: translateY(120%); */
 }
 
 .arrowIcon {
-  /* width: 47px; */
-  /* height: 47px; */
   border-radius: 500px;
   background-color: #f1f1f1;
   box-shadow: 0px 3px 6px #00000029;
   background: #f1f1f1 0% 0% no-repeat padding-box;
-  /* opacity: 1; */
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   vertical-align: middle;
   padding-left: 1vw;
   padding-right: 1vw;
-  /* line-height: 47px; */
   font-size: 25px;
   font-weight: bold;
   color: #707070;
-  /* display: inline-block; */
 }
 
 .viewAnalytics {
@@ -173,8 +159,4 @@
     padding-left: 3vw;
     padding-right: 3vw;
   }
-
-  /* .root {
-    margin-top: ;
-  } */
 }

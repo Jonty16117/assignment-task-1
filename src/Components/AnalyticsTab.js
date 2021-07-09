@@ -13,26 +13,26 @@ function AnalyticsTab() {
   return (
     <Container>
       <Row noGutters={true}>
-        <Col lg={6}>
+        <Col sm={6} lg={6}>
           <div className="d-flex justify-content-center">
-            <img src={analytics1} className={styles.imageContainerleft} />
+            <img src={analytics1} className={styles.imageContainer1} />
           </div>
         </Col>
-        <Col lg={6}>
+        <Col sm={6} lg={6}>
           <div className="d-flex justify-content-center">
-            <img src={analytics2} className={styles.imageContainerleft} />
+            <img src={analytics2} className={styles.imageContainer2} />
           </div>
         </Col>
       </Row>
       <Row>
-        <Col lg={6}>
+        <Col sm={6} lg={6}>
           <div className="d-flex justify-content-center">
-            <img src={analytics3} className={styles.imageContainerleft} />
+            <img src={analytics3} className={styles.imageContainer3} />
           </div>
         </Col>
-        <Col lg={6}>
+        <Col sm={6} lg={6}>
           <div className="d-flex justify-content-center">
-            <img src={analytics4} className={styles.imageContainerleft} />
+            <img src={analytics4} className={styles.imageContainer4} />
           </div>
         </Col>
       </Row>
