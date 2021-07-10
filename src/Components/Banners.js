@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import banner1 from "../Assets/banner1.png";
 import banner2 from "../Assets/banner2.png";
 import banner3 from "../Assets/banner3.png";
@@ -6,6 +6,7 @@ import styles from "../Styles/Banners.module.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import SliderBanner from "./SliderBanner";
+import TestDataService from "../Services/test.service";
 
 const responsive = {
   superLargeDesktop: {
@@ -59,6 +60,24 @@ const CustomDot = ({ onMove, index, onClick, active }) => {
 };
 
 function Banners() {
+  const [testData, setTestData] = useState([]);
+
+  const retrieveTestData = () => {
+    TestDataService.getAll()
+      .then((response) => {
+        setTestData(response.data);
+        console.log(response.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+  useEffect(() => {
+    retrieveTestData();
+  }, []);
+
+  
   return (
     <div className={styles.root}>
       <Carousel

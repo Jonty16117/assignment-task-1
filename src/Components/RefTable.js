@@ -12,17 +12,6 @@ import EditButton from "./EditButton";
 import WeightageSelector from "./WeightageSelector";
 import { FormatBold } from "@material-ui/icons";
 
-function makeid(length) {
-  var result = "";
-  var characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  var charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-}
-
 const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: theme.palette.common.black,
@@ -46,34 +35,17 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-function createData(
-  refProgName,
-  customer,
-  ordersPlacedUsingCoupon,
-  totalRev,
-  AudWeightage
-) {
-  let id = makeid(25);
-  return {
-    id,
-    refProgName,
-    customer,
-    ordersPlacedUsingCoupon,
-    totalRev,
-    AudWeightage,
-  };
-}
 
-const rows = [
-  createData("My Referral Program 1", 13, 5, "$22", "50%"),
-  createData("My Referral Program 2", 15, 10, "$60", "50%"),
-  createData("My Referral Program 3", 13, 5, "$22", "50%"),
-  createData("My Referral Program 4", 15, 10, "$60", "50%"),
-  createData("My Referral Program 5", 13, 5, "$22", "50%"),
-  createData("My Referral Program 6", 13, 5, "$22", "50%"),
-  createData("My Referral Program 7", 13, 5, "$22", "50%"),
-  createData("My Referral Program 8", 13, 5, "$2", "50%"),
-];
+// const rows = [
+//   createData("My Referral Program 1", 13, 5, "$22", "50%"),
+//   createData("My Referral Program 2", 15, 10, "$60", "50%"),
+//   createData("My Referral Program 3", 13, 5, "$22", "50%"),
+//   createData("My Referral Program 4", 15, 10, "$60", "50%"),
+//   createData("My Referral Program 5", 13, 5, "$22", "50%"),
+//   createData("My Referral Program 6", 13, 5, "$22", "50%"),
+//   createData("My Referral Program 7", 13, 5, "$22", "50%"),
+//   createData("My Referral Program 8", 13, 5, "$2", "50%"),
+// ];
 
 const useStyles = makeStyles({
   table: {
@@ -81,7 +53,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function RefTable() {
+export default function RefTable(props) {
   const classes = useStyles();
 
   return (
@@ -108,19 +80,19 @@ export default function RefTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row, index) => (
+          {props.tableData.map((row, index) => (
             <StyledTableRow key={row.id}>
               <StyledTableCell component="th" scope="row">
                 {index + 1}.
               </StyledTableCell>
-              <StyledTableCell align="right">{row.refProgName}</StyledTableCell>
-              <StyledTableCell align="right">{row.customer}</StyledTableCell>
+              <StyledTableCell align="right">{row.ReferalProgramName}</StyledTableCell>
+              <StyledTableCell align="right">{row.Customers}</StyledTableCell>
               <StyledTableCell align="right">
-                {row.ordersPlacedUsingCoupon}
+                {row.OrdersPlacedUsingCoupons}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.totalRev}</StyledTableCell>
+              <StyledTableCell align="right">{row.TotalRevenue}</StyledTableCell>
               <StyledTableCell align="right">
-                <WeightageSelector />
+                <WeightageSelector AudienceWeightage={row.AudienceWeightage}/>
               </StyledTableCell>
               <StyledTableCell align="right">
                 <EditButton />

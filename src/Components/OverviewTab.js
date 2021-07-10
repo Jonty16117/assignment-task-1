@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../Styles/OverviewTab.module.css";
 import trophy from "../Assets/trophy.png";
 import download from "../Assets/download.png";
@@ -15,6 +15,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import OverviewBanner from "./OverviewBanner";
 import useWindowDimensions from "./useWindowDimensions";
+import TestDataService from "../Services/test.service";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const responsive = {
   superLargeDesktop: {
@@ -50,8 +52,90 @@ let heading3 = "Conversion Rate";
 let text3 = "";
 let bgColor3 = "#AEB0E9";
 
+function makeid(length) {
+  var result = "";
+  var characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
+function createData(tableData) {
+  let id = makeid(25);
+  return {
+    ...tableData,
+    id,
+  };
+}
+
+// const dummyData = {
+//   ReferalProgramName: "My Referral Program 1",
+//   Customers: 13,
+//   OrdersPlacedUsingCoupons: 5,
+//   TotalRevenue: 22,
+//   AudienceWeightage: 50,
+// }
+
 function OverviewTab() {
   const { height, width } = useWindowDimensions();
+  const [tableData, setTestData] = useState([]);
+  const [page, setPage] = useState(1);
+  const [count, setCount] = useState(0);
+  const [pageSize, setPageSize] = useState(3);
+  const [hasMore, setHasMore] = useState(true);
+
+  const pageSizes = [3, 6, 9];
+
+  const getRequestParams = (page, pageSize) => {
+    let params = {};
+
+    if (page) {
+      params["page"] = page - 1;
+    }
+
+    if (pageSize) {
+      params["size"] = pageSize;
+    }
+
+    return params;
+  };
+
+  const retrieveTestData = () => {
+    const params = getRequestParams(page, pageSize);
+
+    TestDataService.getAll(params)
+      .then((response) => {
+        const { testData, totalPages } = response.data;
+        if (page <= totalPages) {
+          setTestData(tableData.concat(testData));
+          setCount(totalPages);
+          setPage(page + 1);
+          console.log("pagination data", response.data);
+        } else {
+          setHasMore(false);
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+  // useEffect(() => {
+  //   retrieveTestData();
+  // }, [page, pageSize]);
+
+  const handlePageChange = (event, value) => {
+    setPage(value);
+  };
+
+  const handlePageSizeChange = (event) => {
+    setPageSize(event.target.value);
+    setPage(1);
+  };
+
   return (
     <div className={styles.root}>
       <Container>
@@ -64,7 +148,7 @@ function OverviewTab() {
               bgColor={bgColor1}
             />
           </Col>
-          <Col xs={6} lg={3}className={styles.col2}>
+          <Col xs={6} lg={3} className={styles.col2}>
             <OverviewBanner
               image={sliderImage2}
               heading={heading2}
@@ -72,7 +156,7 @@ function OverviewTab() {
               bgColor={bgColor2}
             />
           </Col>
-          <Col xs={6} lg={3}className={styles.col3}>
+          <Col xs={6} lg={3} className={styles.col3}>
             <OverviewBanner
               image={sliderImage3}
               heading={heading3}
@@ -85,12 +169,7 @@ function OverviewTab() {
               <div className={styles.arrowIcon}>{">"}</div>
             </div>
             <div className={styles.viewAnalyticsDiv2}>
-              <a
-                href="#"
-
-                className={styles.viewAnalytics}
-                
-              >
+              <a href="#" className={styles.viewAnalytics}>
                 View Analytics
               </a>
             </div>
@@ -122,10 +201,19 @@ function OverviewTab() {
           </Col>
         </Row>
       </Container>
-      {/* <div>
-        width: {width} ~ height: {height}
-      </div> */}
-      {width > 1000 ? <RefTable /> : <SplittedRefTable />}
+      <InfiniteScroll
+        dataLength={tableData.length}
+        next={retrieveTestData}
+        hasMore={hasMore}
+        loader={<div className={styles["lds-dual-ring"]}></div>}
+        scrollThreshold={0.99}
+      >
+        {width > 1000 ? (
+          <RefTable tableData={tableData} />
+        ) : (
+          <SplittedRefTable tableData={tableData} />
+        )}
+      </InfiniteScroll>
     </div>
   );
 }

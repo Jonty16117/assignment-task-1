@@ -78,34 +78,16 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-function createData(
-  refProgName,
-  customer,
-  ordersPlacedUsingCoupon,
-  totalRev,
-  AudWeightage
-) {
-  let id = makeid(25);
-  return {
-    id,
-    refProgName,
-    customer,
-    ordersPlacedUsingCoupon,
-    totalRev,
-    AudWeightage,
-  };
-}
-
-const rows = [
-  createData("My Referral Program 1", 13, 5, "$22", "50%"),
-  createData("My Referral Program 2", 15, 10, "$60", "50%"),
-  // createData("My Referral Program 3", 13, 5, "$22", "50%"),
-  // createData("My Referral Program 4", 15, 10, "$60", "50%"),
-  // createData("My Referral Program 5", 13, 5, "$22", "50%"),
-  // createData("My Referral Program 6", 13, 5, "$22", "50%"),
-  // createData("My Referral Program 7", 13, 5, "$22", "50%"),
-  // createData("My Referral Program 8", 13, 5, "$2", "50%"),
-];
+// const rows = [
+//   createData("My Referral Program 1", 13, 5, "$22", "50%"),
+//   createData("My Referral Program 2", 15, 10, "$60", "50%"),
+//   // createData("My Referral Program 3", 13, 5, "$22", "50%"),
+//   // createData("My Referral Program 4", 15, 10, "$60", "50%"),
+//   // createData("My Referral Program 5", 13, 5, "$22", "50%"),
+//   // createData("My Referral Program 6", 13, 5, "$22", "50%"),
+//   // createData("My Referral Program 7", 13, 5, "$22", "50%"),
+//   // createData("My Referral Program 8", 13, 5, "$2", "50%"),
+// ];
 
 const useStyles = makeStyles({
   table: {
@@ -113,7 +95,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function SplittedRefTable() {
+export default function SplittedRefTable(props) {
   const classes = useStyles();
 
   return (
@@ -137,21 +119,21 @@ export default function SplittedRefTable() {
                   align="right"
                   inkBarStyle={{ backgroundColor: "#e77600" }}
                 >
-                  <div className={styles.underlinedHeading}>Customers</div>
+                  <div className={styles.underlinedHeading}>Customerss</div>
                 </StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row, index) => (
+              {props.tableData.map((row, index) => (
                 <StyledTableRow key={row.id}>
                   <StyledTableCell component="th" scope="row">
                     {index + 1}.
                   </StyledTableCell>
                   <StyledTableCell align="right">
-                    {row.refProgName}
+                    {row.ReferalProgramName}
                   </StyledTableCell>
                   <StyledTableCell align="right">
-                    {row.customer}
+                    {row.Customers}
                   </StyledTableCell>
                 </StyledTableRow>
               ))}
@@ -173,22 +155,22 @@ export default function SplittedRefTable() {
                 </StyledTableCell>
                 <StyledTableCell align="right">
                   <div className={styles.underlinedHeading}>
-                    Orders Placed using Coupon
+                    Orders Placed using Coupons
                   </div>
                 </StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row, index) => (
+              {props.tableData.map((row, index) => (
                 <StyledTableRow key={row.id}>
                   <StyledTableCell component="th" scope="row">
                     {index + 1}.
                   </StyledTableCell>
                   <StyledTableCell align="right">
-                    {row.refProgName}
+                    {row.ReferalProgramName}
                   </StyledTableCell>
                   <StyledTableCell align="right">
-                    {row.ordersPlacedUsingCoupon}
+                    {row.OrdersPlacedUsingCoupons}
                   </StyledTableCell>
                 </StyledTableRow>
               ))}
@@ -214,16 +196,16 @@ export default function SplittedRefTable() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row, index) => (
+              {props.tableData.map((row, index) => (
                 <StyledTableRow key={row.id}>
                   <StyledTableCell component="th" scope="row">
                     {index + 1}.
                   </StyledTableCell>
                   <StyledTableCell align="right">
-                    {row.refProgName}
+                    {row.ReferalProgramName}
                   </StyledTableCell>
                   <StyledTableCell align="right">
-                    {row.totalRev}
+                    {row.TotalRevenue}
                   </StyledTableCell>
                 </StyledTableRow>
               ))}
@@ -251,16 +233,16 @@ export default function SplittedRefTable() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row, index) => (
+              {props.tableData.map((row, index) => (
                 <StyledTableRow key={row.id}>
                   <StyledTableCell component="th" scope="row">
                     {index + 1}.
                   </StyledTableCell>
                   <StyledTableCell align="right">
-                    {row.refProgName}
+                    {row.ReferalProgramName}
                   </StyledTableCell>
                   <StyledTableCell align="right">
-                    <WeightageSelector />
+                    <WeightageSelector AudienceWeightage={row.AudienceWeightage}/>
                   </StyledTableCell>
                 </StyledTableRow>
               ))}
@@ -288,13 +270,13 @@ export default function SplittedRefTable() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row, index) => (
+              {props.tableData.map((row, index) => (
                 <StyledTableRow key={row.id}>
                   <StyledTableCell component="th" scope="row">
                     {index + 1}.
                   </StyledTableCell>
                   <StyledTableCell align="right">
-                    {row.refProgName}
+                    {row.ReferalProgramName}
                   </StyledTableCell>
                   <StyledTableCell align="right">
                     <EditButton />

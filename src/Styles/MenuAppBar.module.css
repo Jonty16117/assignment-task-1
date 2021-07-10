@@ -8,7 +8,8 @@
 }
 
 .appBar {
-  background-color: white;
+  /* background-color: white; */
+  color: white !important;
   /* height: 50%; */
   /* max-height: 50px; */
   /* vertical-align: middle; */

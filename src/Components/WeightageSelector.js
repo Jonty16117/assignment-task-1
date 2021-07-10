@@ -1,14 +1,13 @@
 import React from "react";
 import styles from "../Styles/WeightageSelector.module.css";
-import Dropdown from 'react-bootstrap/Dropdown';
+import Dropdown from "react-bootstrap/Dropdown";
 
-function WeightageSelector() {
+function WeightageSelector(props) {
   return (
-    <Dropdown >
+    <Dropdown>
       <Dropdown.Toggle id="dropdown-basic" className={styles.root}>
-        50%
+        {props.AudienceWeightage}%
       </Dropdown.Toggle>
-
       <Dropdown.Menu>
         <Dropdown.Item href="#/action-1">0%</Dropdown.Item>
         <Dropdown.Item href="#/action-2">25%</Dropdown.Item>

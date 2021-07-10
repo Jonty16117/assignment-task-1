@@ -61,12 +61,16 @@
 }
 
 .downloadImg {
-  width: 3vw;
-  height: 3vw;
+  width: 2vw;
+  height: 2vw;
 }
 
 .downloadText {
-  font-size: 1vw;
+  font-size: 0.9vw;
+  margin-top: 5px;
+  /* color:#707070; */
+  /* top: 50%; */
+  /* background-color: burlywood; */
 }
 
 .tableContainer {
@@ -117,6 +121,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.lds-dual-ring {
+  /* display: inline-block; */
+  width: 80px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 3vw;
+  height: 3vw;
+  margin: 8px;
+  border-radius: 50%;
+  border: 2px solid black;
+  border-color: black transparent black transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media only screen and (max-width: 900px) {
