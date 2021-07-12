@@ -79,7 +79,7 @@ function createData(tableData) {
 //   AudienceWeightage: 50,
 // }
 
-function OverviewTab() {
+export const OverviewTab = React.memo((props) => {
   const { height, width } = useWindowDimensions();
   const [tableData, setTestData] = useState([]);
   const [page, setPage] = useState(1);
@@ -216,6 +216,6 @@ function OverviewTab() {
       </InfiniteScroll>
     </div>
   );
-}
+});
 
 export default OverviewTab;

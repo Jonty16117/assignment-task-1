@@ -95,7 +95,8 @@ const useStyles = makeStyles({
   },
 });
 
-export default function SplittedRefTable(props) {
+// export default function SplittedRefTable(props) {
+const SplittedRefTable = React.memo((props) => {
   const classes = useStyles();
 
   return (
@@ -242,7 +243,9 @@ export default function SplittedRefTable(props) {
                     {row.ReferalProgramName}
                   </StyledTableCell>
                   <StyledTableCell align="right">
-                    <WeightageSelector AudienceWeightage={row.AudienceWeightage}/>
+                    <WeightageSelector
+                      AudienceWeightage={row.AudienceWeightage}
+                    />
                   </StyledTableCell>
                 </StyledTableRow>
               ))}
@@ -289,4 +292,6 @@ export default function SplittedRefTable(props) {
       </div>
     </React.Fragment>
   );
-}
+});
+
+export default SplittedRefTable;

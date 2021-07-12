@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../Styles/DisplayTabs.module.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 // import "react-tabs/style/react-tabs.css";
@@ -7,21 +7,31 @@ import OverviewTab from "./OverviewTab";
 import AnalyticsTab from "./AnalyticsTab";
 
 function DisplayTabs() {
+  const [switchTab, setSwitchTab] = useState(0);
+
+  const toggleTabs = (index, lastIndex) => {
+    if (index === 0) {
+      setSwitchTab(0);
+    } else {
+      setSwitchTab(1);
+    }
+  };
+
   return (
-    <div className={styles.root}>
-      <Tabs defaultIndex={0} >
+    <>
+      <Tabs defaultIndex={0} onSelect={toggleTabs}>
         <TabList>
           <Tab>Overview</Tab>
           <Tab>Analytics</Tab>
         </TabList>
-        <TabPanel>
-          <OverviewTab />
-        </TabPanel>
-        <TabPanel>
-          <AnalyticsTab />
-        </TabPanel>
       </Tabs>
-    </div>
+      <div style={{ display: switchTab === 1 ? "block" : "none" }}>
+        <AnalyticsTab />
+      </div>
+      <div style={{ display: switchTab === 0 ? "block" : "none" }}>
+        <OverviewTab />
+      </div>
+    </>
   );
 }
 

@@ -35,7 +35,6 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-
 // const rows = [
 //   createData("My Referral Program 1", 13, 5, "$22", "50%"),
 //   createData("My Referral Program 2", 15, 10, "$60", "50%"),
@@ -53,55 +52,66 @@ const useStyles = makeStyles({
   },
 });
 
-export default function RefTable(props) {
+// export default function RefTable(props) {
+const RefTable = React.memo((props) => {
   const classes = useStyles();
 
   return (
     <div className={styles.tableContainer}>
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell className={styles.tableHeadLeft}>
-              S. No.
-            </StyledTableCell>
-            <StyledTableCell align="right">
-              Referral Program Name
-            </StyledTableCell>
-            <StyledTableCell align="right">Customers</StyledTableCell>
-            <StyledTableCell align="right">
-              Orders Placed using Coupon
-            </StyledTableCell>
-            <StyledTableCell align="right">Total Revenue</StyledTableCell>
-            <StyledTableCell align="right">Audience Weightage</StyledTableCell>
-            <StyledTableCell align="right" className={styles.tableHeadRight}>
-              Preview/Settings
-            </StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {props.tableData.map((row, index) => (
-            <StyledTableRow key={row.id}>
-              <StyledTableCell component="th" scope="row">
-                {index + 1}.
-              </StyledTableCell>
-              <StyledTableCell align="right">{row.ReferalProgramName}</StyledTableCell>
-              <StyledTableCell align="right">{row.Customers}</StyledTableCell>
-              <StyledTableCell align="right">
-                {row.OrdersPlacedUsingCoupons}
-              </StyledTableCell>
-              <StyledTableCell align="right">{row.TotalRevenue}</StyledTableCell>
-              <StyledTableCell align="right">
-                <WeightageSelector AudienceWeightage={row.AudienceWeightage}/>
+      <TableContainer component={Paper}>
+        <Table className={classes.table} aria-label="customized table">
+          <TableHead>
+            <TableRow>
+              <StyledTableCell className={styles.tableHeadLeft}>
+                S. No.
               </StyledTableCell>
               <StyledTableCell align="right">
-                <EditButton />
+                Referral Program Name
               </StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+              <StyledTableCell align="right">Customers</StyledTableCell>
+              <StyledTableCell align="right">
+                Orders Placed using Coupon
+              </StyledTableCell>
+              <StyledTableCell align="right">Total Revenue</StyledTableCell>
+              <StyledTableCell align="right">
+                Audience Weightage
+              </StyledTableCell>
+              <StyledTableCell align="right" className={styles.tableHeadRight}>
+                Preview/Settings
+              </StyledTableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {props.tableData.map((row, index) => (
+              <StyledTableRow key={row.id}>
+                <StyledTableCell component="th" scope="row">
+                  {index + 1}.
+                </StyledTableCell>
+                <StyledTableCell align="right">
+                  {row.ReferalProgramName}
+                </StyledTableCell>
+                <StyledTableCell align="right">{row.Customers}</StyledTableCell>
+                <StyledTableCell align="right">
+                  {row.OrdersPlacedUsingCoupons}
+                </StyledTableCell>
+                <StyledTableCell align="right">
+                  {row.TotalRevenue}
+                </StyledTableCell>
+                <StyledTableCell align="right">
+                  <WeightageSelector
+                    AudienceWeightage={row.AudienceWeightage}
+                  />
+                </StyledTableCell>
+                <StyledTableCell align="right">
+                  <EditButton />
+                </StyledTableCell>
+              </StyledTableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
-}
+});
+
+export default RefTable;
